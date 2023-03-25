@@ -1,12 +1,12 @@
 //prompts user to enter the lowest number
-const lowerBound =  prompt("what is the lowest number?");
+let lowerBound =  prompt("what is the lowest number?");
 //prompts user to enter the highest number
-const upperBound = prompt("What is the highest number?");
+let upperBound = prompt("What is the highest number?");
 
 //variable used to change the value of the first h2
-const lBound = document.querySelector("#lowerBound");
+let lBound = document.querySelector("#lowerBound");
 //variable used to change the value of the second h2
-const uBound = document.querySelector("#upperBound");
+let uBound = document.querySelector("#upperBound");
 
 //changes the text of the first h2 to the lower bound the user inputted
 lBound.innerText = lowerBound;
@@ -22,7 +22,7 @@ const randomNum = (x,y) => {
 }
 
 //holds the value of the random number
-const ranNumber = randomNum(parseInt(lowerBound), parseInt(upperBound));
+let ranNumber = randomNum(parseInt(lowerBound), parseInt(upperBound));
 
 //select the form so we can take the value of input
 const form = document.querySelector("#guess");
@@ -69,7 +69,29 @@ const numGuess = document.querySelector("#numberOfGuesses");
          //tells user how many guesses they took
         numGuess.innerText = `It took you ${numOfGuesses} guesses!`
     } 
-    
+        
+
+})
+
+const reset = document.querySelector("#reset");
+reset.addEventListener("click", ()=> {
+//prompts user to enter the lowest number
+lowerBound =  prompt("what is the lowest number?");
+//prompts user to enter the highest number
+upperBound = prompt("What is the highest number?");
+//changes the text of the first h2 to the lower bound the user inputted
+lBound.innerText = lowerBound;
+
+ranNumber = randomNum(parseInt(lowerBound), parseInt(upperBound));
+
+//changes the text of the first h2 to the upper bound the user inputted
+uBound.innerText = upperBound;
+numOfGuesses = 0;
+guessh2.innerText = "";
+numGuess.innerText = "";
+guess = 0;
+
+
 
 })
 
