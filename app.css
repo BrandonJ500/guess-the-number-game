@@ -25,3 +25,18 @@ h1 {
 #numberOfGuesses {
     text-align: center;
 }
+
+#Rset {
+    display: flex;
+    justify-content: center;
+}
+
+#reset {
+    color:crimson;
+    background-color: transparent;
+}
+
+#reset:hover {
+    box-shadow: 3px 3px 2px red;
+    transform: translate(-2px,-3px);
+}
