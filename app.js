@@ -37,19 +37,37 @@ let guess = 0;
 //
 const input = document.querySelector("input");
 let numOfGuesses = 0;
+const numGuess = document.querySelector("#numberOfGuesses");
 
    form.addEventListener('submit', (x)=> {
     x.preventDefault();
     guess = parseInt(input.value);
     input.value = "";
     if(ranNumber > guess){
-        guessh2.innerText = `current guess is: ${guess}; number is too low`
+        //tells the user that there guess is too high
+        guessh2.innerText = `current guess is: ${guess}; number is too low`;
+        // adds one to num of guesses
+        numOfGuesses +=1; 
+
+        //tells user how many guesses they've guessed 
+        numGuess.innerText = `Number of guesses: ${numOfGuesses}`
     }
     else if (ranNumber < guess){
+        //tells the user that there guess is too low
         guessh2.innerText = `current guess is: ${guess}; number is too high`
-    }
+        // adds one to num of guesses
+        numOfGuesses +=1;
+         //tells user how many guesses they've guessed 
+        numGuess.innerText = `Number of guesses: ${numOfGuesses}`
+    }   
     else {
+        //when you guess the correct number this tells you your guess
+        //and what the correct number was
         guessh2.innerText = `current guess is: ${guess}; number was ${guess}, you got it!`
+        // adds one to num of guesses
+        numOfGuesses +=1;
+         //tells user how many guesses they took
+        numGuess.innerText = `It took you ${numOfGuesses} guesses!`
     } 
     
 

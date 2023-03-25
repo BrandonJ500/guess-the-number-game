@@ -21,3 +21,7 @@ h1 {
  
     font-size: 25px;
 }
+
+#numberOfGuesses {
+    text-align: center;
+}
